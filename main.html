@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/bilifont.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        * ::selection {
+            background: #73c9e5;
+            color: inherit
+        }
+
+        ::selection {
+            background: #1890ff;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        
+        .link {
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+        }
+
+        .main-site {
+            
+        }
+        .main-site::before {
+            content: "\E72B"
+        }
+
+        .mini-header {
+            background-image: url("/static/img/nav-bg.png");
+            min-width: 999px;
+            min-height: 155px;
+            background-repeat: no-repeat;
+            background-position: center 0;
+            background-size: cover;
+        }
+        
+        .header-nav {
+            width: 100%;
+            display: block;
+            line-height: 30px;
+        }
+        
+        @keyframes hnavslider {
+            0% {
+                transform: translateY(0);
+            }
+            5% {
+                transform: translateY(-36px);
+            }
+            50% {
+                transform: translateY(-36px);
+            }
+            55% {
+                transform: translateY(-72px);
+            }
+            100% {
+                transform: translateY(-72px);
+            }
+        }
+
+        .scroll-hnav-link {
+            position: relative;
+            width: 54px;
+            height: 108px;
+            overflow: hidden;
+            animation: hnavslider 10s ease-out infinite;
+            animation-delay: 4.5s;
+        }
+
+        .scroll-text {
+            line-height: 36px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .text-up {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .text-down {
+            position: absolute;
+            top: 72px;
+            left: 0;
+        }
+
+        .scroll-gif {
+            position: absolute;
+            top: 36px;
+            left: 0;
+            width: 54px;
+            height: 36px;
+        }
+
+        .hnav-item-left {
+            float: left;
+        }
+        
+        .hnav-item-right {
+            float: right;
+        }
+        
+        .hori-list {
+            list-style-type: none;
+        }
+        
+        .hori-list li {
+            float: left;
+        }
+        
+        .user-avatar {}
+        
+        .search-box {
+            float: left;
+        }
+        
+        .search-button {
+
+        }
+
+        .download-app {
+
+        }
+
+        .download-app::before {
+            content: "\E72D";
+        }
+
+        .search-button::before{
+            content: "\E72C"
+        }
+
+        #push {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="mini-header">
+            <div class="header-nav">
+                <div class="hnav-item-left">
+                    <ul class="hori-list">
+                        <li><a href="" class="link"><i class="bilifont main-site"></i>主站</a></li>
+                        <li><a class="link">番剧</a></li>
+                        <li><a class="link">游戏中心</a></li>
+                        <li><a class="link">直播</a></li>
+                        <li><a class="link">会员购</a></li>
+                        <li><a class="link">漫画</a></li>
+                        <li><a class="link">赛事</a></li>
+
+                        <li><a href="" class="link">
+                            <div class="scroll-hnav-link">
+                                <p class="scroll-text text-up">BML</p>
+                                <img class="scroll-gif" src="./static/img/bml.png" alt="">
+                                <p class="scroll-text text-down">BML</p>
+                            </div>
+                        </a></li>
+
+                        <li><a href="" class="link"><i class="bilifont download-app"></i>下载APP</a></li>
+                    </ul>
+                </div>
+                <div class="search-box">
+                    <form action="">
+                        <input type="search">
+                        <a href=""><i class="bilifont search-button"></i></a>
+                    </form>
+                </div>
+                <div class="hnav-item-right">
+                    <ul class="hori-list">
+                        <li><img src="static/img/avatar.png" class="user-avatar"></li>
+                        <li><a>大会员</a></li>
+                        <li><a>消息</a></li>
+                        <li><a>动态</a></li>
+                        <li><a>收藏</a></li>
+                        <li><a>历史</a></li>
+                        <li><a>创作中心</a></li>
+                    </ul>
+                    <div id="push">
+                        <a href="">投稿</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
