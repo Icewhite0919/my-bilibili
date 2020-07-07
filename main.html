@@ -28,19 +28,23 @@
         }
         
         .link {
+            display: flex;
             font-size: 14px;
             color: #fff;
             text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
         }
 
         .main-site {
-            
+            margin-right: 6px;
+            font-size: 18px;
         }
         .main-site::before {
             content: "\E72B"
         }
-
-        .mini-header {
+        .bili-banner {
+            margin: 0 auto;
+            position: relative;
+            z-index: 0;
             background-image: url("/static/img/nav-bg.png");
             min-width: 999px;
             min-height: 155px;
@@ -48,11 +52,25 @@
             background-position: center 0;
             background-size: cover;
         }
+        .mini-header {
+            z-index: 1;
+            height: 56px;
+            width: 100%;
+            position: absolute;
+        }
+        .mini-header * {
+            box-sizing: border-box;
+        }
         
         .header-nav {
+            margin: 0 auto;
+            padding: 10px 24px;
+            height: 56px;
+            position: relative;
             width: 100%;
-            display: block;
+            display: flex;
             line-height: 30px;
+            justify-content: space-between;
         }
         
         @keyframes hnavslider {
@@ -72,8 +90,12 @@
                 transform: translateY(-72px);
             }
         }
-
         .scroll-hnav-link {
+            height: 36px;
+            width: 54px;
+            overflow: hidden;
+        }
+        .scroll-hnav-linki {
             position: relative;
             width: 54px;
             height: 108px;
@@ -107,24 +129,41 @@
             width: 54px;
             height: 36px;
         }
-
-        .hnav-item-left {
-            float: left;
-        }
         
-        .hnav-item-right {
-            float: right;
+        .user-center {
+            display: flex;
         }
-        
+        .user-con {
+            display: flex;
+        }
+        .user-con div {
+            margin-right: 10px;
+        }
         .hori-list {
             list-style-type: none;
         }
         
         .hori-list li {
             float: left;
+            margin-right: 10px;
         }
         
-        .user-avatar {}
+        .user-avatar {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            position: relative;
+            margin-right: 10px;
+        }
+        .user-avatar .img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .user-avatar .decorate {
+
+        }
         
         .search-box {
             float: left;
@@ -156,24 +195,25 @@
     <header>
         <div class="mini-header">
             <div class="header-nav">
-                <div class="hnav-item-left">
+                <div>
                     <ul class="hori-list">
                         <li><a href="" class="link"><i class="bilifont main-site"></i>主站</a></li>
-                        <li><a class="link">番剧</a></li>
-                        <li><a class="link">游戏中心</a></li>
-                        <li><a class="link">直播</a></li>
-                        <li><a class="link">会员购</a></li>
-                        <li><a class="link">漫画</a></li>
-                        <li><a class="link">赛事</a></li>
+                        <li><a href="" class="link">番剧</a></li>
+                        <li><a href="" class="link">游戏中心</a></li>
+                        <li><a href="" class="link">直播</a></li>
+                        <li><a href="" class="link">会员购</a></li>
+                        <li><a href="" class="link">漫画</a></li>
+                        <li><a href="" class="link">赛事</a></li>
 
-                        <li><a href="" class="link">
-                            <div class="scroll-hnav-link">
-                                <p class="scroll-text text-up">BML</p>
-                                <img class="scroll-gif" src="./static/img/bml.png" alt="">
-                                <p class="scroll-text text-down">BML</p>
-                            </div>
-                        </a></li>
-
+                        <li>
+                            <a href="" class="link scroll-hnav-link">
+                                <div class="scroll-hnav-linki">
+                                    <p class="scroll-text text-up">BML</p>
+                                    <img class="scroll-gif" src="./static/img/bml.png" alt="">
+                                    <p class="scroll-text text-down">BML</p>
+                                </div>
+                            </a>
+                        </li>
                         <li><a href="" class="link"><i class="bilifont download-app"></i>下载APP</a></li>
                     </ul>
                 </div>
@@ -183,22 +223,25 @@
                         <a href=""><i class="bilifont search-button"></i></a>
                     </form>
                 </div>
-                <div class="hnav-item-right">
-                    <ul class="hori-list">
-                        <li><img src="static/img/avatar.png" class="user-avatar"></li>
-                        <li><a>大会员</a></li>
-                        <li><a>消息</a></li>
-                        <li><a>动态</a></li>
-                        <li><a>收藏</a></li>
-                        <li><a>历史</a></li>
-                        <li><a>创作中心</a></li>
-                    </ul>
+                <div class="user-center">
+                    <div class="user-con">
+                        <div class="user-avatar">
+                            <img src="static/img/avatar-item.png" class="img">
+                        </div>
+                        <div><a class="link">大会员</a></div>
+                        <div><a class="link">消息</a></div>
+                        <div><a class="link">动态</a></div>
+                        <div><a class="link">收藏</a></div>
+                        <div><a class="link">历史</a></div>
+                        <div><a class="link">创作中心</a></div>
+                    </div>
                     <div id="push">
-                        <a href="">投稿</a>
+                        <a class="link" href="">投稿</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="bili-banner"></div>
     </header>
 </body>
 
